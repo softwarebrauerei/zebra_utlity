@@ -28,7 +28,7 @@ import com.zebra.sdk.printer.ZebraPrinterFactory;
 import com.zebra.sdk.printer.ZebraPrinterLanguageUnknownException;
 import com.zebra.sdk.printer.discovery.DiscoveredPrinter;
 import com.zebra.sdk.printer.discovery.DiscoveryHandler;
-import com.zebra.sdk.printer.discovery.NetworkDiscoverer;
+//import com.zebra.sdk.printer.discovery.NetworkDiscoverer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -108,7 +108,7 @@ public class Printer implements MethodChannel.MethodCallHandler {
             });
 
 
-            NetworkDiscoverer.findPrinters(new DiscoveryHandler() {
+            /*NetworkDiscoverer.findPrinters(new DiscoveryHandler() {
                 @Override
                 public void foundPrinter(DiscoveredPrinter discoveredPrinter) {
                     addNewDiscoverPrinter(discoveredPrinter, context, methodChannel);
@@ -128,6 +128,7 @@ public class Printer implements MethodChannel.MethodCallHandler {
                     finishScanPrinter(context, methodChannel);
                 }
             });
+             */
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -663,7 +664,7 @@ public class Printer implements MethodChannel.MethodCallHandler {
         try {
             return lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
         } catch (Exception ex) {
-            return false;
+            return true;
         }
     }
 }
